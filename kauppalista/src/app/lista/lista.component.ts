@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaComponent implements OnInit {
    tuotteet;
-   nimi;
+   nimi = '';
   constructor() { }
 
   ngOnInit() {
@@ -16,6 +16,10 @@ export class ListaComponent implements OnInit {
   }
 
     lisaaTuote(){
+
+      if (this.nimi === ''){
+        return;
+      }
      this.tuotteet.push({
       text: this.nimi
        })
