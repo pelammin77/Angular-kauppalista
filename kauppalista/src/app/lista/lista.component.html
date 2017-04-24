@@ -1,3 +1,6 @@
+<h4>
+  Listassa on  {{this.tuotteet.length}} tuotetta
+</h4>
 
 <h3> Tuoteen lisäys </h3>
 <form (submit)="lisaaTuote()">
@@ -8,7 +11,10 @@
 
 <h3> Tuotteet </h3>
 
+
+
     <ul>
+      
       <li *ngFor = 'let tuote of tuotteet'>
         {{tuote.text}} <button  (click)="poistaTuote(tuote.text)" > x  </button>
          
