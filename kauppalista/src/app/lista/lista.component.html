@@ -1,10 +1,18 @@
-<h3>  Tuotteet </h3>
- <ul>
- <li *ngFor="let tuote of tuotteet">
 
-  {{tuote.text}}
+<h3> Tuoteen lisäys </h3>
+<form (submit)="lisaaTuote()">
+    Tuoteen nimi: <input  type="text" [(ngModel)]="nimi" name="nimi">
 
- </li>
+</form>
 
 
- </ul>
+<h3> Tuotteet </h3>
+
+    <ul>
+      <li *ngFor = 'let tuote of tuotteet'>
+        {{tuote.text}} <button  (click)="poistaTuote(tuote.text)" > x  </button>
+         
+      </li>
+    </ul>
+
+

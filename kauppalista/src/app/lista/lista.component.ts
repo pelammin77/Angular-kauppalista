@@ -7,22 +7,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaComponent implements OnInit {
    tuotteet;
+   nimi;
   constructor() { }
 
   ngOnInit() {
 
-    this.tuotteet = [
-      {
-        text: 'Maito'
-      },
-      {
-        text: 'Leipä'
-      },
-
-      {
-        text: 'Makkara'
-      }
-    ];
+    this.tuotteet = [];
   }
 
-}
+    lisaaTuote(){
+     this.tuotteet.push({
+      text: this.nimi
+       })
+    }
+
+
+   poistaTuote(tuoteenText){
+      for(let i = 0; i < this.tuotteet.length; i++){
+        if( this.tuotteet[i].text === tuoteenText){
+         this.tuotteet.splice(i, 1)
+         }
+       }
+     }
+  }
