@@ -6,10 +6,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./lista.component.css']
 })
 export class ListaComponent implements OnInit {
-
+   tuotteet;
   constructor() { }
 
   ngOnInit() {
+
+    this.tuotteet = [
+      {
+        text: 'Maito'
+      },
+      {
+        text: 'Leipä'
+      },
+
+      {
+        text: 'Makkara'
+      }
+    ];
   }
 
 }
