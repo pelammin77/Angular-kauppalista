@@ -10,6 +10,7 @@ import{TuoteService } from '../tuote.service';
 export class ListaComponent implements OnInit {
    tuotteet;
    nimi = '';
+   ohjelmanTila = 'default';
   constructor(private _tuoteService: TuoteService) { }
 
   ngOnInit() {
@@ -30,6 +31,7 @@ this.tuotteet = this._tuoteService.haeTuoteet();
       }
   
   this._tuoteService.tallenaTuoteet(uusiTuote)
+   this.nimi = '';
  }
 
 
@@ -42,4 +44,12 @@ this.tuotteet = this._tuoteService.haeTuoteet();
       this._tuoteService.poistaTuote(tuoteenText);   
    }
   
+
+muokkaa(muokattavaTuote ){
+
+    this.ohjelmanTila = 'edit';
+    this.nimi = muokattavaTuote.text;
+
+}
+
  }

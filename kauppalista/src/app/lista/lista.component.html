@@ -16,7 +16,7 @@
     <ul>
       
       <li *ngFor = 'let tuote of tuotteet'>
-        {{tuote.text}} <button  (click)="poistaTuote(tuote.text)" > x  </button>
+     <span  (click)="muokkaa(tuote)"> {{tuote.text}} </span> <button  (click)="poistaTuote(tuote.text)" > x  </button>
          
       </li>
     </ul>
