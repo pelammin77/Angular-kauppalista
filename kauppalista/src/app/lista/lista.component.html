@@ -2,11 +2,23 @@
   Listassa on  {{this.tuotteet.length}} tuotetta
 </h4>
 
+
+<div *ngIf="ohjelmanTila=='default'">
 <h3> Tuoteen lisäys </h3>
 <form (submit)="lisaaTuote()">
     Tuoteen nimi: <input  type="text" [(ngModel)]="nimi" name="nimi">
 
 </form>
+</div>
+
+<div *ngIf="ohjelmanTila=='edit'">
+<h3> Tuoteen muokkaus </h3>
+<form (submit)="paivitaTuote()">
+    Tuoteen nimi: <input  type="text" [(ngModel)]="nimi" name="nimi">
+
+</form>
+</div>
+
 
 
 <h3> Tuotteet </h3>
