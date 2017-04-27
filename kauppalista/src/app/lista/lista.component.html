@@ -6,7 +6,7 @@
 <div *ngIf="ohjelmanTila=='default'">
 <h3> Tuoteen lisäys </h3>
 <form (submit)="lisaaTuote()">
-    Tuoteen nimi: <input  type="text" [(ngModel)]="nimi" name="nimi">
+    Tuoteen nimi: <input class="form-control"  type="text" [(ngModel)]="nimi" name="nimi">
 
 </form>
 </div>
@@ -14,7 +14,7 @@
 <div *ngIf="ohjelmanTila=='edit'">
 <h3> Tuoteen muokkaus </h3>
 <form (submit)="paivitaTuote()">
-    Tuoteen nimi: <input  type="text" [(ngModel)]="nimi" name="nimi">
+    Tuoteen nimi: <input class="form-control" type="text" [(ngModel)]="nimi" name="nimi">
 
 </form>
 </div>
@@ -25,10 +25,9 @@
 
 
 
-    <ul>
-      
-      <li *ngFor = 'let tuote of tuotteet'>
-     <span  (click)="muokkaa(tuote)"> {{tuote.text}} </span> <button  (click)="poistaTuote(tuote.text)" > x  </button>
+    <ul class="list-group">   
+      <li *ngFor = 'let tuote of tuotteet' class="list-group-item">
+     <span  (click)="muokkaa(tuote)"> {{tuote.text}} </span> <button class="btn btn-danger btn-sm"  (click)="poistaTuote(tuote.text)" > x  </button>
          
       </li>
     </ul>
