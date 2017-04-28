@@ -1,35 +1,34 @@
-<h4>
-  Listassa on  {{this.tuotteet.length}} tuotetta
-</h4>
+<!--
+  Tiedosto: lista.component.html
+  Tekijä Petri Lamminaho
+Kuvaus:
+  Listan Html-sivu hoitaa Listan ja tuoteiden näyttämisen ruudulle
+-->
+
+  <h4>
+     Listassa on  {{this.tuotteet.length}} tuotetta
+  </h4>
 
 
-<div *ngIf="ohjelmanTila=='default'">
-<h3> Tuoteen lisäys </h3>
-<form (submit)="lisaaTuote()">
-    Tuoteen nimi: <input class="form-control"  type="text" [(ngModel)]="nimi" name="nimi">
+  <div *ngIf="ohjelmanTila=='default'">
+    <h3> Tuoteen lisäys </h3>
+     <form (submit)="lisaaTuote()">
+    Tuoteen nimi: <input class="form-control"  type="text" [(ngModel)]="nimi" name="nimi" id="nimi">
+     </form> 
+  </div>
 
-</form>
-</div>
+   <div *ngIf="ohjelmanTila=='edit'">
+    <h3> Tuoteen muokkaus </h3>
+      <form (submit)="paivitaTuote()">
+         Tuoteen nimi: <input class="form-control" type="text" [(ngModel)]="nimi" name="nimi" id="nimi" >
+      </form>
+    </div>
 
-<div *ngIf="ohjelmanTila=='edit'">
-<h3> Tuoteen muokkaus </h3>
-<form (submit)="paivitaTuote()">
-    Tuoteen nimi: <input class="form-control" type="text" [(ngModel)]="nimi" name="nimi">
-
-</form>
-</div>
-
-
-
-<h3> Tuotteet </h3>
-
-
-
-    <ul class="list-group">   
-      <li *ngFor = 'let tuote of tuotteet' class="list-group-item">
-     <span  (click)="muokkaa(tuote)"> {{tuote.text}} </span> <button class="btn btn-danger btn-sm"  (click)="poistaTuote(tuote.text)" > x  </button>
-         
-      </li>
-    </ul>
+    <h3> Tuotteet </h3>
+      <ul class="list-group">
+        <li *ngFor = 'let tuote of tuotteet' class="list-group-item">
+         <span  (click)="muokkaa(tuote)"> {{tuote.text}} </span> <button class="btn btn-danger btn-sm"  (click)="poistaTuote(tuote.text)" > x  </button>  
+        </li>
+     </ul>
 
 
